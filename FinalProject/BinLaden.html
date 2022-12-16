@@ -4,6 +4,11 @@
      <link rel="stylesheet" href="style.css"> <!-- external style -->
     <script src="script.js"></script> <!-- external javascript -->
       <style>
+
+        body {
+  background-image: url('/IMAGES/peakpx.jpg');
+
+        }
     ul {
       list-style-type: none;
       margin: 0;
@@ -17,17 +22,6 @@ li {
 }
    
 
-    li a {
-      display: block;
-      color: white;
-      text-align: center;
-      padding: 14px 16px;
-      text-decoration: none;
-    }
-
-    li a:hover:not(.active) {
-      background-color: #111;
-    }
 
     .active {
       background-color: #333;
@@ -38,28 +32,52 @@ li {
       font-family: "Papyrus", "Copperplate", fantasy;
       font-size: 20px;
     }
-img {
-  width: 100%;
-}
+
   </style>
 </head>
 <h1>Jalalabad Gambit</h1>
 <body>
 
   <ul>
-    <li style=""><a href="index.html" style="background-color:#009900;">Home</a></li>
-    <li><a href="BinLaden.html" style="background-color:#B30000;">Jalalabad Gambit</a></li>
-    <li><a href="London.html" class="LonCol" style="background-color:#1a53ff;">London Opening</a></li>
-    <li><a href="KingGambit.html" class="KingCol" style="background-color:#6600ff;">King's Gambit</a>
+   <li style=""><a href="index.html" style="background-color: #1a1a1a;">Home</a></li>
+    <li><a href="BinLaden.html" style="background-color:#d9d9d9; color: black;">Jalalabad Gambit</a></li>
+    <li><a href="London.html" class="LonCol" style="background-color:#1a1a1a;">London Opening</a></li>
+    <li><a href="KingGambit.html" class="KingCol" style="background-color:#d9d9d9; color: black;">King's Gambit</a>
   </ul>
 <h2>Concept</h2>
 <p>By moving the e5 pawn, black gambits the e5 pawn in exchange for quicker development with moves such as Qe7, Bd6 and Kc6 (Giving away even more pieces).</p>
 <h2>History</h2>
 <p>The Jalalabad Defense was created by Sam Sloan in 1978 after being locked up in Jalalabad Prison, Afghanistan. He was able to keep his chess board after being locked up for six weeks. Trying to create something new, he created the Jalalabad Defense.</p>
   <center>
-    <img src="/IMAGES/Jalalabad Gambit.png"alt="King's G" style="width:384px;height:384px;">
+    <img id = "bin"  onclick="enlargeImg()" src="/IMAGES/Jalalabad Gambit.png"alt="King's G" style="width:384px;height:384px;">
+
+ <br />
+    <p>Click the Image to make it bigger</p>
+  
+            <br />
+            <!-- Button to reset the Image size -->
+            <button id = "butbin" onclick="resetImg()">Reset
+          </button>
+
 </center>
+
+   <script>
+            img = document.getElementById("bin");
+            // Function to set image dimensions
+            function enlargeImg() {
+                img.style.width = "60%";
+                img.style.height = "auto";
+                img.style.transition = "width 0.5s ease";
+            }
+            // Function to reset image dimensions
+            function resetImg() {
+                img.style.width = "40%";
+                img.style.height = "auto";
+                img.style.transition = "width 0.5s ease";
+            }
+        </script>
 </body>
 
 </html>
+
 
