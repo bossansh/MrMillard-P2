@@ -1,4 +1,23 @@
-
 h1, h2 {
       text-align: center;
+      color: white;
+}
+p{
+  color: white;
+}
+    li a {
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 111px;
+      text-decoration: none;
+    }
+
+    li a:hover:not(.active) {
+      background-color: #111;
+    }
+li{
+  display: inline;
+  float: left;
+  
 }
