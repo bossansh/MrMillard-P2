@@ -2,11 +2,17 @@
 <html>
   <head>
      <link rel="stylesheet" href="style.css"> <!-- external style -->
-    <script src="script.js"></script> <!-- external javascript -->
+    
       <style>
 
-        body {
-  background-image: url('/IMAGES/peakpx.jpg');
+        html {
+  background-image: url('/IMAGES/2203449.jpg');\
+            background-size: cover;
+      min-height: 100%;
+          
+    background-repeat: no-repeat;
+   background-position: center center;
+          background-attachment: fixed;
 
         }
     ul {
@@ -14,7 +20,7 @@
       margin: 0;
       padding: 0;
       overflow: hidden;
-      background-color: #333;
+      text-align: center;
     }
 li {
   
@@ -31,6 +37,7 @@ li {
       width: 100%;
       font-family: "Papyrus", "Copperplate", fantasy;
       font-size: 20px;
+      text-align: center;
     }
 
   </style>
@@ -39,10 +46,10 @@ li {
 <body>
 
   <ul>
-   <li style=""><a href="index.html" style="background-color: #1a1a1a;">Home</a></li>
-    <li><a href="BinLaden.html" style="background-color:#d9d9d9; color: black;">Jalalabad Gambit</a></li>
-    <li><a href="London.html" class="LonCol" style="background-color:#1a1a1a;">London Opening</a></li>
-    <li><a href="KingGambit.html" class="KingCol" style="background-color:#d9d9d9; color: black;">King's Gambit</a>
+   <li style=""><a href="index.html" style="background-color: #1a1a1a;" id  = "hovhom">Home</a></li>
+    <li><a href="BinLaden.html" style="background-color:#d9d9d9; color: black;" id = "hovbin">Jalalabad Gambit</a></li>
+    <li><a href="London.html" class="LonCol" style="background-color:#1a1a1a;" id = "hovlon">London Opening</a></li>
+    <li><a href="KingGambit.html" class="KingCol" style="background-color:#d9d9d9; color: black;" id = "hovkin">King's Gambit</a>
   </ul>
 <h2>Concept</h2>
 <p>By moving the e5 pawn, black gambits the e5 pawn in exchange for quicker development with moves such as Qe7, Bd6 and Kc6 (Giving away even more pieces).</p>
@@ -71,13 +78,13 @@ li {
             }
             // Function to reset image dimensions
             function resetImg() {
-                img.style.width = "40%";
+                img.style.width = "20%";
                 img.style.height = "auto";
                 img.style.transition = "width 0.5s ease";
             }
         </script>
+
+  <script src="script.js"></script> <!-- external javascript -->
 </body>
 
 </html>
-
-
