@@ -3,23 +3,27 @@
 
 <head>
   <link rel="stylesheet" href="style.css"> <!-- external style -->
-  <script src="script.js"></script> <!-- external javascript -->
+   
 
 
   <style>
-    body {
+    html {
       background-image: url('/IMAGES/wallpaperflare.com_wallpaper.jpg');
-
-
+    background-size: cover;
+      min-height: 100%;
+    background-repeat: no-repeat;
+   background-position: center center;
+      background-attachment: fixed;
 
     }
+
 
     ul {
       list-style-type: none;
       margin: 0;
       padding: 0;
       overflow: hidden;
-      background-color: #333;
+      text-align: center;
     }
 
     li {
@@ -40,25 +44,25 @@
       width: 100%;
       font-family: "Papyrus", "Copperplate", fantasy;
       font-size: 20px;
+      text-align: center;
     }
   </style>
 </head>
 <h1>Chess Openings</h1>
 
 <body>
-
   <ul>
-    <li style=""><a href="index.html" style="background-color: #1a1a1a;">Home</a></li>
-    <li><a href="BinLaden.html" style="background-color:#d9d9d9; color: black;">Jalalabad Gambit</a></li>
-    <li><a href="London.html" class="LonCol" style="background-color:#1a1a1a;">London Opening</a></li>
-    <li><a href="KingGambit.html" class="KingCol" style="background-color:#d9d9d9; color: black;">King's Gambit</a>
+    <li style=""><a href="index.html" style="background-color: #1a1a1a;" id  = "hovhom">Home</a></li>
+    <li><a href="BinLaden.html" style="background-color:#d9d9d9; color: black;" id = "hovbin">Jalalabad Gambit</a></li>
+    <li><a href="London.html" class="LonCol" style="background-color:#1a1a1a;" id = "hovlon">London Opening</a></li>
+    <li><a href="KingGambit.html" class="KingCol" style="background-color:#d9d9d9; color: black;" id = "hovkin">King's Gambit</a>
   </ul>
   <p>Chess is a very strategical game filled with multiple strategies. The most important part of a chess game is the
     opening. Well seasoned opening equates to a well played gamed that can potentially give you an edge over your
     opponent. It is very important to learn openings to master the beautiful game of chess. We will show you the
     greatest strategies to ever
     exist in the game of chess. Whatever your preference is, we will ensure your success to checkmate that king.</p>
-
+  <script src="script.js"></script><!-- external javascript -->
 </body>
 
 </html>
