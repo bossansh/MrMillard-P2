@@ -22,11 +22,13 @@
       overflow: hidden;
       text-align: center;
     }
-li {
-  
-  border-right:1px solid #bbb;
-}
-   
+    li {
+      
+      border-right:1px solid #bbb;
+    }
+   li a:hover:not(.active) {
+      background-color: #111;
+    }
 
 
     .active {
@@ -63,7 +65,7 @@ li {
   
             <br />
             <!-- Button to reset the Image size -->
-            <button id = "butbin" onclick="resetImg()">Reset
+            <button id = "butbin" onclick="resetImg()" style = "background-color: #e7e7e7; color: black; font-size: 20px; padding: 10px 14px; ">Reset
           </button>
 
 </center>
@@ -72,7 +74,7 @@ li {
             img = document.getElementById("bin");
             // Function to set image dimensions
             function enlargeImg() {
-                img.style.width = "60%";
+                img.style.width = "40%";
                 img.style.height = "auto";
                 img.style.transition = "width 0.5s ease";
             }
