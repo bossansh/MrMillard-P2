@@ -57,14 +57,36 @@ img {
     <li><a href="KingGambit.html" class="KingCol" style="background-color:#d9d9d9; color: black;" id = "hovkin">King's Gambit</a>
   </ul>
 <h2>Concept</h2>
-<p>By moving the e5 pawn, black gambits the e5 pawn in exchange for quicker development with moves such as Qe7, Bd6 and Kc6 (Giving away even more pieces).</p>
+<p>The King's Gambit happens after 1.e4 e5 2.f4 and it's the fourth most popular move after Black plays 1...e5. White's idea is to gambit a pawn to build a strong center after diverting Black's e5-pawn to f4. If Black accepts the pawn sacrifice, White has two main plans: attack the weak f7-square or play d2-d4 and develop their pieces to active squares.</p>
 <h2>History</h2>
-<p>The Jalalabad Defense was created by Sam Sloan in 1978 after being locked up in Jalalabad Prison, Afghanistan. He was able to keep his chess board after being locked up for six weeks. Trying to create something new, he created the Jalalabad Defense.</p>
+<p>It was popularized by Lionel Kieseritzky in the 1840s and used successfully by Wilhelm Steinitz. Boris Spassky used it to beat Bobby Fischer in a famous game at Mar del Plata in 1960. The main line of the Kieseritzky Gambit is considered to be 5...Nf6 6.Bc4 d5 7.exd5 Bd6 8.d4 with an unclear position.</p>
   <center>
-    <img src="/IMAGES/King's Gambit.jpg "alt="King's G" style="width:384px;height:384px;">
+    <img src="/IMAGES/King's Gambit.jpg " id = "king"  onclick="enlargeImg()"alt="King's G" style="width:384px;height:384px;">
+    <br />
+    <p>Click the Image to make it bigger</p>
+  
+            <br />
+            <!-- Button to reset the Image size -->
+             <button id = "butbin" onclick="resetImg()" style = "background-color: #e7e7e7; color: black; font-size: 20px; padding: 10px 14px;">Reset
+          </button>
 </center>
+
+   <script>
+            img = document.getElementById("king");
+            // Function to set image dimensions
+            function enlargeImg() {
+                img.style.width = "40%";
+                img.style.height = "auto";
+                img.style.transition = "width 0.5s ease";
+            }
+            // Function to reset image dimensions
+            function resetImg() {
+                img.style.width = "20%";
+                img.style.height = "auto";
+                img.style.transition = "width 0.5s ease";
+            }
+        </script>
    <script src="script.js"></script> <!-- external javascript -->
 </body>
 
 </html>
-
