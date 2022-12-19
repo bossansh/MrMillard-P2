@@ -49,3 +49,17 @@ box3.addEventListener('mouseover', function handleMouseOver() {
 box3.addEventListener('mouseout', function handleMouseOut() {
   box3.style.color = 'white';
 }); 
+
+
+const box4 = document.getElementById('butbin');
+
+
+box4.addEventListener('mouseover', function handleMouseOver() {
+  box4.style.color = 'red';
+});
+
+
+box4.addEventListener('mouseout', function handleMouseOut() {
+  box4.style.color = 'black';
+}); 
+
