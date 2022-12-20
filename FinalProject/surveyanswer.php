@@ -1,11 +1,30 @@
-<?php
-$FavOpening = $_POST['FavOpening'];
-echo "<h2> We will try to add " . $FavOpening . " to this website. </h2>";
-?>
-<!DOCTYPE html>
-<html>
+<?php 
+session_start(); 
+include "db_connection.php";
 
-<head>
-  <link rel="stylesheet" href="style.css"> <!-- external style -->
-</head>
-</html>
+if (isset($_POST['FavOpening'])) {
+
+	function validate($data){
+       $data = trim($data);
+	   $data = stripslashes($data);
+	   $data = htmlspecialchars($data);
+	   return $data;
+	}
+
+	$FavOpening = validate($_POST['FavOpening']);
+
+	if (empty($FavOpening)) {
+		header("Location: survey.php?error=Please type a valid opening.");
+	    exit();
+	}else{
+		$sql = "SELECT * FROM users WHERE user_name='$uname' AND password='$pass'";
+
+		$result = mysqli_query($conn, $sql);
+
+		
+	}
+	
+}else{
+	header("Location: survey.php");
+	exit();
+}
