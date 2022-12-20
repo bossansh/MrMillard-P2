@@ -11,7 +11,7 @@
 $host = "localhost";
 $username = "root";
 $user_pass = "";
-$database_in_use = "test";
+$database_in_use = "Chess";
 
 $mysqli = new mysqli($host, $username, $user_pass, $database_in_use);
 
