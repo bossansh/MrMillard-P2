@@ -1,11 +1,6 @@
 
 <?php 
-/*CREATE DATABASE Chess;
-  CREATE TABLE favorite_chess_opening? (
-    ChessID int,
-    Chess_answers varchar(255),
-);*/
-$server = "localhost";
+$server = "localhost"; //Please edit the username and password to what suits your computer.
 $username = "root";
 $password = "";
 $dbname = "Chess";
