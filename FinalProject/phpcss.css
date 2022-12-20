@@ -38,7 +38,7 @@ label {
 	padding: 10px;
 }
 
-button, a, li {
+button, a{
 	float: right;
 	background: #555;
 	padding: 10px 15px;
