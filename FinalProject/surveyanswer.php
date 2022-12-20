@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link rel="stylesheet" href="phpcss.css"> <!-- external style -->
   </head>
   <body>
     <li style=""><a href="index.html" style="background-color: #1a1a1a;">Home</a></li>
