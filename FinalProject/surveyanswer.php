@@ -18,6 +18,7 @@ if(isset($_POST['submit'])){
     $query = "insert into favorite chess opening?(Chess_answers) values('$FavOpening')";
     $run = mysqli_query($conn, $query) or die(mysqli_error());
     if($run){
+      echo "<h2>Hi</h2>";
       echo "<h2>We will try to add" . $FavOpening . "to this website!</h2>";
       }
     else{
