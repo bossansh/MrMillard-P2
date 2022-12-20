@@ -3,7 +3,7 @@
   <head>
   </head>
   <body>
-    
+    <li style=""><a href="index.html" style="background-color: #1a1a1a;">Home</a></li>
     <?php 
     $server = "localhost"; //Please edit the username and password to what suits your computer.
     $username = "root";
@@ -31,6 +31,6 @@
       }
 
     }
-  ?>
+    ?>
   </body>
 </html>
