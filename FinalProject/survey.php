@@ -21,6 +21,7 @@
        <input type="text" name="FavOpening" placeholder="Opening name"><br>
        <button type="submit" name = "submit">Submit</button>
     </form>
+    <li style=""><a href="index.html" style="background-color: #1a1a1a;">Home</a></li>
   </body>
 </html>
 
