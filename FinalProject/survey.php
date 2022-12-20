@@ -2,10 +2,10 @@
 <html>
   <head>
     <title>Survey</title>
-    <link rel="stylesheet" href="style.css"> <!-- external style -->
+    <link rel="stylesheet" href="phpcss.css"> <!-- external style -->
     <style>
       html {
-        background-image: url('/IMAGES/kingdown.jpeg');
+        background-image: url('IMAGES/kingdown.jpeg');
         background-size: cover;
         min-height: 100%;
         background-repeat: no-repeat;
@@ -15,10 +15,15 @@
     </style>
   </head>
   <body>
-    <form action = "surveyanswer.php" method = "post">
-      <h1>What is your favorite opening?</h1>
-      <input type="text" name="FavOpening" placeholder="Name of opening">
-      <button type = "submit">Submit</button>
-    </form>
+       <form action="surveyanswer.php" method="post">
+        <h2>What is your favorite chess opening?</h2>
+        <?php if (isset($_GET['error'])) { ?>
+          <p class="error"><?php echo $_GET['error']; ?></p>
+        <?php } ?>
+        <label>Favorite Opening</label>
+        <input type="text" name="FavOpening" placeholder="Opening name"><br>
+        <button type="submit">Login</button>
+       </form>
   </body>
-</html>
+  </html>
+
