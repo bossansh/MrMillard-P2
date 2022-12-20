@@ -25,19 +25,4 @@
 
     }
     ?>
-<!DOCTYPE html>
-<html>
-  <head>
-    <link rel="stylesheet" href="phpcss.css"> <!-- external style -->
-    html {
-        background-image: url('IMAGES/linedchess.webp');
-        background-size: cover;
-        min-height: 100%;
-        background-repeat: no-repeat;
-        background-position: center center;
-        background-attachment: fixed;
-      }
-  </head>
-  <body>
-  </body>
-</html>
+
