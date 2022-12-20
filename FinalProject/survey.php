@@ -15,12 +15,12 @@
     </style>
   </head>
   <body>
-       <form action="surveyanswer.php" method="post">
-        <h2>What is your favorite chess opening?</h2>
-        <label>Favorite Opening</label>
-        <input type="text" name="FavOpening" placeholder="Opening name"><br>
-        <button type="submit">Login</button>
-       </form>
+    <form action="surveyanswer.php" method="post">
+       <h2>What is your favorite chess opening?</h2>
+       <label>Favorite Opening</label>
+       <input type="text" name="FavOpening" placeholder="Opening name"><br>
+       <button type="submit" name = "submit">Submit</button>
+    </form>
   </body>
   </html>
 
