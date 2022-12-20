@@ -17,9 +17,6 @@
   <body>
        <form action="surveyanswer.php" method="post">
         <h2>What is your favorite chess opening?</h2>
-        <?php if (isset($_GET['error'])) { ?>
-          <p class="error"><?php echo $_GET['error']; ?></p>
-        <?php } ?>
         <label>Favorite Opening</label>
         <input type="text" name="FavOpening" placeholder="Opening name"><br>
         <button type="submit">Login</button>
