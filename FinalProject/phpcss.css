@@ -1,5 +1,5 @@
 body {
-	display: flex;
+	display: flex; /*Makes the box for the survey inside background*/
 	justify-content: center;
 	align-items: center;
 	height: 100vh;
@@ -7,40 +7,40 @@ body {
 }
 
 *{
-	font-family: sans-serif;
+	font-family: sans-serif; /*Sets font*/
 	box-sizing: border-box;
 }
 
 form {
 	width: 500px;
-	border: 2px solid #ccc;
+	border: 2px solid #ccc; /*Styling for the box*/
 	padding: 30px;
 	background: #fff;
 	border-radius: 15px;
 }
 
 h2 {
-	text-align: center;
+	text-align: center; /*Styling for words inside of box*/
 	margin-bottom: 40px;
 }
 
 input {
 	display: block;
-	border: 2px solid #ccc;
+	border: 2px solid #ccc; /*Styling of the input bar*/
 	width: 95%;
 	padding: 10px;
 	margin: 10px auto;
 	border-radius: 5px;
 }
 label {
-	color: #888;
+	color: #888;/*styling of the label inside of box*/
 	font-size: 18px;
 	padding: 10px;
 }
 
 button{
 	float: right;
-	background: #555;
+	background: #555; /*Styling of submit button*/
 	padding: 10px 15px;
 	color: #fff;
 	border-radius: 5px;
@@ -50,14 +50,6 @@ button{
 button:hover{
 	opacity: .7;
 }
-.error {
-   background: #F2DEDE;
-   color: #A94442;
-   padding: 10px;
-   width: 95%;
-   border-radius: 5px;
-   margin: 20px auto;
-}
 
 h1 {
 	text-align: center;
@@ -65,7 +57,7 @@ h1 {
 }
 a {
 	float: right;
-	background: #555;
+	background: #555; /*Styling of back button*/
 	padding: 10px 15px;
 	color: #fff;
 	border-radius: 5px;
