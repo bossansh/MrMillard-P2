@@ -16,7 +16,7 @@
   <body>
     <li style=""><a href="index.html" style="background-color: #1a1a1a;">Home</a></li> <!-- button to go back to home page -->
     <?php 
-    $server = "localhost"; //Please edit the username and password to what suits your computer.
+    $server = "localhost"; 
     $username = "root";
     $password = "";
     $dbname = "Chess";
