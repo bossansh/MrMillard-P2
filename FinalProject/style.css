@@ -13,7 +13,7 @@ p{
       text-decoration: none;
     }
 
-    li a:hover:not(.active) { 
+    li a:hover:not(.active) { /*Color of buttons in general*/
       background-color: #111;
     }
 li{
