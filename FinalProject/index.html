@@ -38,14 +38,6 @@
     .active {
       background-color: #333;
     }
-
-    p {
-      height: 100%;
-      width: 100%;
-      font-family: "Papyrus", "Copperplate", fantasy;
-      font-size: 20px;
-      text-align: center;
-    }
   </style>
 </head>
 <h1>Chess Openings</h1>
@@ -63,7 +55,43 @@
     greatest strategies to ever
     exist in the game of chess. Whatever your preference is, we will ensure your success to checkmate that king.</p>
   <ul>
-    <li style=""><a href="survey.php" style="background-color: #1a1a1a;" id  = "hovhom">Take Our Survey!</a></li>
+
+     <center>
+    <img id = "mag"  onclick="enlargeImg()" src="IMAGES/carlsen-nakamura.jpg"alt="Carlsen and Nakamura" style="width:800px;height:384px;">
+
+ <br />
+    <p>Click the Image to make it bigger</p>
+  
+            <br />
+            <!-- Button to reset the Image size -->
+            <button id = "butbin" onclick="resetImg()" style = "background-color: #e7e7e7; color: black; font-size: 20px; padding: 10px 14px; ">Reset
+          </button>
+
+</center>
+
+   <script>
+            img = document.getElementById("mag");
+            // Function to set image dimensions
+            function enlargeImg() {
+                img.style.width = "60%";
+                img.style.height = "auto";
+                img.style.transition = "width 0.5s ease";
+            }
+            // Function to reset image dimensions
+            function resetImg() {
+                img.style.width = "40%";
+                img.style.height = "auto";
+                img.style.transition = "width 0.5s ease";
+            }
+        </script>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <li><a href="survey.php" style="background-color: #d9d9d9; color: black" id  = "hovhom">Take Our Survey!</a></li>
   </ul>    
   <script src="script.js"></script><!-- external javascript -->
 </body>
