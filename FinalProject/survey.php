@@ -6,7 +6,7 @@
     <style>
       html {
         background-image: url('IMAGES/kingdown.jpeg');
-        background-size: cover; <!-- adds background image to the page -->
+        background-size: cover; /* adds background image to the page */
         min-height: 100%;
         background-repeat: no-repeat;
         background-position: center center;
