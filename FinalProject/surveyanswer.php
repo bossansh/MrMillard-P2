@@ -2,6 +2,16 @@
 <html>
   <head>
     <link rel="stylesheet" href="phpcss.css"> <!-- external style -->
+    <style>
+      html {
+        background-image: url('IMAGES/blackchesspieces.jpeg');
+        background-size: cover; /* adds background image to the page */
+        min-height: 100%;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-attachment: fixed;
+      }
+    </style>
   </head>
   <body>
     <li style=""><a href="index.html" style="background-color: #1a1a1a;">Home</a></li> <!-- button to go back to home page -->
