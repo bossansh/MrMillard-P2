@@ -4,7 +4,7 @@
     <link rel="stylesheet" href="phpcss.css"> <!-- external style -->
     <style>
       html {
-        background-image: url('IMAGES/blackchesspieces.jpeg');
+        background-image: url('IMAGES/drawnpieces.jpeg');
         background-size: cover; /* adds background image to the page */
         min-height: 100%;
         background-repeat: no-repeat;
