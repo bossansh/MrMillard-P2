@@ -19,10 +19,6 @@ form {
 	border-radius: 15px;
 }
 
-h2 {
-	text-align: center; /*Styling for words inside of box*/
-	margin-bottom: 40px;
-}
 
 input {
 	display: block;
@@ -32,7 +28,7 @@ input {
 	margin: 10px auto;
 	border-radius: 5px;
 }
-label {
+label, th {
 	color: #888;/*styling of the label inside of box*/
 	font-size: 18px;
 	padding: 10px;
@@ -67,4 +63,8 @@ a {
 }
 a:hover{
 	opacity: .7;
+}
+table{ /*Styling for the table*/
+    margin-left: auto;
+    margin-right: auto;
 }
