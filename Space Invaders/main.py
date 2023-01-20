@@ -54,7 +54,9 @@ last_alien_shot = pygame.time.get_ticks()
 countdown = 3
 last_count = pygame.time.get_ticks()
 game_over = 0#0 is no game over, 1 means player has won, -1 means player has lost
-difficulty = input("Set difficulty: 1 = easy, 2 = medium, 3 = hard")
+difficulty = input("Set difficulty: 1 = easy, 2 = medium, 3 = hard: ")
+
+
 
 #define colours
 red = (255, 0, 0)
@@ -89,11 +91,27 @@ class Spaceship(pygame.sprite.Sprite):
 		self.last_shot = pygame.time.get_ticks()
 
 
-	def update(self):
-		#set movement speed
-		speed = 8
-		#set a cooldown variable
-		cooldown = 500 #milliseconds
+	def update(self, level):
+		if difficulty == "1":
+			#set movement speed
+			speed = 12
+			#set a cooldown variable
+			cooldown = 2 #milliseconds
+		if difficulty == "2":
+			#set movement speed
+			speed = 8
+			#set a cooldown variable
+			cooldown = 500 #milliseconds
+		if difficulty == "3":
+			#set movement speed
+			speed = 1
+			#set a cooldown variable
+			cooldown = 1000 #milliseconds
+		else:
+			#set movement speed
+			speed = 8
+			#set a cooldown variable
+			cooldown = 500 #milliseconds	
 		game_over = 0
 
 
@@ -283,7 +301,7 @@ while run:
 
 		if game_over == 0:
 			#update spaceship
-			game_over = spaceship.update()
+			game_over = spaceship.update(difficulty)
 
 			#update sprite groups
 			bullet_group.update()
