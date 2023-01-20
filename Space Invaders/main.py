@@ -1,7 +1,16 @@
+###############################################################
+#
+
+
+
 import pygame
 from pygame import mixer
 from pygame.locals import *
 import random
+import os
+
+sourceFileDir = os.path.dirname(os.path.abspath(__file__))
+os.chdir(sourceFileDir)
 
 
 pygame.mixer.pre_init(44100, -16, 2, 512)
@@ -45,6 +54,7 @@ last_alien_shot = pygame.time.get_ticks()
 countdown = 3
 last_count = pygame.time.get_ticks()
 game_over = 0#0 is no game over, 1 means player has won, -1 means player has lost
+difficulty = input("Set difficulty: 1 = easy, 2 = medium, 3 = hard")
 
 #define colours
 red = (255, 0, 0)
