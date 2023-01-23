@@ -1,5 +1,15 @@
-###############################################################
-#
+#############################################################################
+# Name: Anshul Prabu #221                                                   #
+# Project: Space Invaders  													#
+#                                                                           #
+# Description: A game where a player controls a spaceship by pressing 		#
+# arrow keysand uses the space to shoot at enemy invaders who are 			#
+# shooting back. The player wins if all enemies are shot, and loses			#
+# if the player loses all of his lives. The dynamic element I have created	#
+# is a difficulty, which alters movement speed and bullet cooldown of the	#
+# player based on chosen difficulty.										#
+#																			#
+#############################################################################
 
 
 
@@ -54,7 +64,7 @@ last_alien_shot = pygame.time.get_ticks()
 countdown = 3
 last_count = pygame.time.get_ticks()
 game_over = 0#0 is no game over, 1 means player has won, -1 means player has lost
-difficulty = input("Set difficulty: 1 = easy, 2 = medium, 3 = hard: ")
+difficulty = input("Set difficulty: 1 = easy, 2 = medium, 3 = hard: ")#asks user to input their wanted difficulty
 
 
 
@@ -93,24 +103,18 @@ class Spaceship(pygame.sprite.Sprite):
 
 	def update(self, level):
 		if difficulty == "1":
-			#set movement speed
+			#set movement speed based on difficulty
 			speed = 12
-			#set a cooldown variable
+			#set a cooldown variable based on difficulty
 			cooldown = 2 #milliseconds
 		if difficulty == "2":
-			#set movement speed
 			speed = 8
-			#set a cooldown variable
 			cooldown = 500 #milliseconds
 		if difficulty == "3":
-			#set movement speed
 			speed = 1
-			#set a cooldown variable
 			cooldown = 1000 #milliseconds
 		else:
-			#set movement speed
 			speed = 8
-			#set a cooldown variable
 			cooldown = 500 #milliseconds	
 		game_over = 0
 
@@ -166,7 +170,10 @@ class Bullets(pygame.sprite.Sprite):
 			explosion_fx.play()
 			explosion = Explosion(self.rect.centerx, self.rect.centery, 2)
 			explosion_group.add(explosion)
-
+		if pygame.sprite.spritecollide(self, alien_wall, True):
+			self.kill()
+			explosion_fx.play()
+			explosion = Explosion(self.rect.centerx, self.rect.centery, 2)
 
 
 
@@ -248,6 +255,21 @@ class Explosion(pygame.sprite.Sprite):
 		if self.index >= len(self.images) - 1 and self.counter >= explosion_speed:
 			self.kill()
 
+class alien_wall(pygame.sprite.Sprite):
+	def __init__(self, x, y):
+		pygame.sprite.Sprite.__init__(self)
+		self.image = pygame.image.load("img/wall.jpeg")
+		self.move_counter = 0
+		self.move_direction = 1
+
+	def update(self):
+		self.rect.x += self.move_direction
+		if abs(self.move_counter) > 200:
+			self.move_direction *= -1
+			self.move_counter *= self.move_direction
+		
+
+
 
 
 
@@ -256,6 +278,7 @@ spaceship_group = pygame.sprite.Group()
 bullet_group = pygame.sprite.Group()
 alien_group = pygame.sprite.Group()
 alien_bullet_group = pygame.sprite.Group()
+alien_wall_group = pygame.sprite.Group()
 explosion_group = pygame.sprite.Group()
 
 
@@ -272,6 +295,10 @@ create_aliens()
 #create player
 spaceship = Spaceship(int(screen_width / 2), screen_height - 100, 3)
 spaceship_group.add(spaceship)
+
+#create wall
+wall = alien_wall(int(screen_width/2), 500)
+alien_wall_group.add(alien_wall(x, y))
 
 
 
@@ -307,6 +334,7 @@ while run:
 			bullet_group.update()
 			alien_group.update()
 			alien_bullet_group.update()
+			alien_wall_group.update()
 		else:
 			if game_over == -1:
 				draw_text('GAME OVER!', font40, white, int(screen_width / 2 - 100), int(screen_height / 2 + 50))
@@ -331,6 +359,7 @@ while run:
 	bullet_group.draw(screen)
 	alien_group.draw(screen)
 	alien_bullet_group.draw(screen)
+	alien_wall_group.draw(screen)
 	explosion_group.draw(screen)
 
 
