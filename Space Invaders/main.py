@@ -151,7 +151,30 @@ class Spaceship(pygame.sprite.Sprite):
 			game_over = -1
 		return game_over
 
+class alien_wall(pygame.sprite.Sprite):
+	def __init__(self, x, y, health):
+		pygame.sprite.Sprite.__init__(self)
+		self.image = pygame.image.load("img/wall.jpeg")
+		self.rect = self.image.get_rect()
+		self.rect.center = [x, y]
+		self.move_counter = 0
+		self.move_direction = 1
+		self.health_start = health
+		self.health_remaining = health
 
+	def update(self):
+		self.rect.x += self.move_direction
+		if abs(self.move_counter) > 50:
+			self.move_direction *= -1
+			self.move_counter *= self.move_direction
+			pygame.draw.rect(screen, red, (self.rect.x, (self.rect.bottom + 10), self.rect.width, 15))
+		if self.health_remaining > 0:
+			pygame.draw.rect(screen, green, (self.rect.x, (self.rect.bottom + 10), int(self.rect.width * (self.health_remaining / self.health_start)), 15))
+		elif self.health_remaining <= 0:
+			explosion = Explosion(self.rect.centerx, self.rect.centery, 3)
+			explosion_group.add(explosion)
+			self.kill()
+		self.mask = pygame.mask.from_surface(self.image)
 
 #create Bullets class
 class Bullets(pygame.sprite.Sprite):
@@ -170,10 +193,13 @@ class Bullets(pygame.sprite.Sprite):
 			explosion_fx.play()
 			explosion = Explosion(self.rect.centerx, self.rect.centery, 2)
 			explosion_group.add(explosion)
-		if pygame.sprite.spritecollide(self, alien_wall, True):
+		if pygame.sprite.spritecollide(self, alien_wall_group, False, pygame.sprite.collide_mask):
 			self.kill()
 			explosion_fx.play()
-			explosion = Explosion(self.rect.centerx, self.rect.centery, 2)
+			alien_wall.health_remaining -= 1
+			explosion = Explosion(self.rect.centerx, self.rect.centery, 1)
+			explosion_group.add(explosion)
+			
 
 
 
@@ -255,18 +281,7 @@ class Explosion(pygame.sprite.Sprite):
 		if self.index >= len(self.images) - 1 and self.counter >= explosion_speed:
 			self.kill()
 
-class alien_wall(pygame.sprite.Sprite):
-	def __init__(self, x, y):
-		pygame.sprite.Sprite.__init__(self)
-		self.image = pygame.image.load("img/wall.jpeg")
-		self.move_counter = 0
-		self.move_direction = 1
 
-	def update(self):
-		self.rect.x += self.move_direction
-		if abs(self.move_counter) > 200:
-			self.move_direction *= -1
-			self.move_counter *= self.move_direction
 		
 
 
@@ -275,10 +290,11 @@ class alien_wall(pygame.sprite.Sprite):
 
 #create sprite groups
 spaceship_group = pygame.sprite.Group()
+alien_wall_group = pygame.sprite.Group()
 bullet_group = pygame.sprite.Group()
 alien_group = pygame.sprite.Group()
 alien_bullet_group = pygame.sprite.Group()
-alien_wall_group = pygame.sprite.Group()
+
 explosion_group = pygame.sprite.Group()
 
 
@@ -297,8 +313,8 @@ spaceship = Spaceship(int(screen_width / 2), screen_height - 100, 3)
 spaceship_group.add(spaceship)
 
 #create wall
-wall = alien_wall(int(screen_width/2), 500)
-alien_wall_group.add(alien_wall(x, y))
+wall = alien_wall(int(screen_width/2), 500, 999)
+alien_wall_group.add(wall)
 
 
 
@@ -331,10 +347,11 @@ while run:
 			game_over = spaceship.update(difficulty)
 
 			#update sprite groups
+			alien_wall_group.update()
 			bullet_group.update()
 			alien_group.update()
 			alien_bullet_group.update()
-			alien_wall_group.update()
+			
 		else:
 			if game_over == -1:
 				draw_text('GAME OVER!', font40, white, int(screen_width / 2 - 100), int(screen_height / 2 + 50))
@@ -355,11 +372,12 @@ while run:
 
 
 	#draw sprite groups
-	spaceship_group.draw(screen)
+	spaceship_group.draw(screen)	
+	alien_wall_group.draw(screen)
 	bullet_group.draw(screen)
 	alien_group.draw(screen)
 	alien_bullet_group.draw(screen)
-	alien_wall_group.draw(screen)
+
 	explosion_group.draw(screen)
 
 
