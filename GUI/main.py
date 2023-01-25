@@ -8,7 +8,7 @@
 
 import tkinter as tk
 import PyPDF2 
-from PIL import * #Image, ImageTk
+from PIL import Image, ImageTk
 from tkinter.filedialog import askopenfile
 
 main = tk.Tk()
@@ -31,9 +31,9 @@ def open_file(): #opens user's files, and asks to select one to be placed into w
     browse_text.set("loading... ")
     file = askopenfile(parent=main, mode="rb", title="choose a file", filetype=[("Pdf file", "*.pdf")])
     if file:
-        read_pdf = PyPDF2.PdfFileReader(file)
-        page = read_pdf.getPage(0)
-        page_content = page.extractText()
+        reader = PyPDF2.PdfReader(file)
+        page = reader.pages[0]
+        page_content = page.extract_text()
         #text box
         text_box = tk.Text(main, height=10, width=50, padx=15, pady=15)
         text_box.insert(1.0, page_content)
