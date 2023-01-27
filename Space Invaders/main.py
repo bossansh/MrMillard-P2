@@ -111,7 +111,7 @@ class Spaceship(pygame.sprite.Sprite):
 			speed = 8
 			cooldown = 500 #milliseconds
 		if difficulty == "3":
-			speed = 1
+			speed = 4
 			cooldown = 1000 #milliseconds
 		else:
 			speed = 8
@@ -164,13 +164,16 @@ class alien_wall(pygame.sprite.Sprite):
 
 	def update(self):
 		self.rect.x += self.move_direction
-		if abs(self.move_counter) > 50:
+		self.move_counter += 1
+		if abs(self.move_counter) > 150: #moves left an right
 			self.move_direction *= -1
 			self.move_counter *= self.move_direction
-			pygame.draw.rect(screen, red, (self.rect.x, (self.rect.bottom + 10), self.rect.width, 15))
-		if self.health_remaining > 0:
-			pygame.draw.rect(screen, green, (self.rect.x, (self.rect.bottom + 10), int(self.rect.width * (self.health_remaining / self.health_start)), 15))
-		elif self.health_remaining <= 0:
+		if pygame.sprite.spritecollide(self, bullet_group, True): #stops bullets from crossing wall
+			explosion_fx.play()
+			self.health_remaining -= 1
+			explosion = Explosion(self.rect.centerx, self.rect.centery, 1)
+			explosion_group.add(explosion)
+		if self.health_remaining <= 0:
 			explosion = Explosion(self.rect.centerx, self.rect.centery, 3)
 			explosion_group.add(explosion)
 			self.kill()
@@ -192,12 +195,6 @@ class Bullets(pygame.sprite.Sprite):
 			self.kill()
 			explosion_fx.play()
 			explosion = Explosion(self.rect.centerx, self.rect.centery, 2)
-			explosion_group.add(explosion)
-		if pygame.sprite.spritecollide(self, alien_wall_group, False, pygame.sprite.collide_mask):
-			self.kill()
-			explosion_fx.play()
-			alien_wall.health_remaining -= 1
-			explosion = Explosion(self.rect.centerx, self.rect.centery, 1)
 			explosion_group.add(explosion)
 			
 
