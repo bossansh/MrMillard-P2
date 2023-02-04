@@ -37,7 +37,7 @@ instructions.grid(columnspan = 3, column=0, row=1) #places instructions in certa
 
 def open_file(): #opens user's files, and asks to select one to be placed into window
     browse_text.set("loading... ")
-    file = askopenfile(parent=main, mode="rb", title="choose a file", filetypes=[("Pdf file", "*.pdf")])
+    file = askopenfile(parent=main, mode="rb", title="choose a file", filetypes=[("Pdf file", "*.pdf")]) #no s for windows
     if file:
         reader = PyPDF2.PdfReader(file) #takes file to read and extract text
         page = reader.pages[0]
