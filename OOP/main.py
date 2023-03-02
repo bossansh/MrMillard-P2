@@ -26,6 +26,9 @@ class Vehicle(): #step 1 Creates class
             return capacity * 100 #if not, does regular fare.
     def classfinder(self): #finds type of the parameter
         print("The", self.name, "is a ",type(self))
+    def parentclassfinder(self):
+        for base in self.__class__.__bases__: #finds all the bases or parent class of the parameter
+            print(base.__name__) #prints out these parent classes
         
 class Bus(Vehicle): #step 3 Creates bus class and gives it Vehicle's attributes
     pass 
@@ -40,6 +43,4 @@ Vehicle.update(Audi) #step 6 runs update and prints car stats
 Vehicle.seating_capacity(schoolBus, 50) #step 5
 Vehicle.classfinder(schoolBus) #step 8 displays class, Bus for schoolbus, car for audi
 Vehicle.classfinder(Audi) 
-
-#Step 9. School Bus is an instance of a vehicle class, as it is part of one of its subclasses
-#, the bus class. It has all the attributes of the vehicle class.
+Vehicle.parentclassfinder(schoolBus) #step 9 displays parent class of bus.
