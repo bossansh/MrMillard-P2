@@ -1,7 +1,7 @@
 import random
 import openai
 
-openai.api_key = "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"
+openai.api_key = "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"
 def generate_story():
     # Define the prompt that the API will use to generate the response
     prompt = f"Who is Adolf HItler>?"
