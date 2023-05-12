@@ -1,10 +1,10 @@
 import random
 import openai
 
-openai.api_key = "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"
+openai.api_key = "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"
 def generate_story():
     # Define the prompt that the API will use to generate the response
-    prompt = f"Who is Adolf HItler>?"
+    prompt = f"Make a love story starring Donald Trump and Joe Biden"
     
     # Define the parameters for the API request
     model_engine = "GPT-3"  # Choose the GPT-3 model engine
@@ -25,4 +25,4 @@ def generate_story():
     # Return the generated response
     return story
 
-generate_story()
+print(generate_story())
