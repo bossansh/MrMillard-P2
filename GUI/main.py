@@ -2,11 +2,8 @@
 # Description: This GUI has a button which allows a user to select a text   #
 # from their files, and this text will pop-up below. The text box allows    #
 # user input. If the user wants to change something in the PDF, they can    #
-# edit in the text box and then save it in a new one. The project was       #
-# inspired by a youtube video by Python Simplified. The video created a     #
-# project where one can open the text of a file                             #
-# (link: https://youtu.be/itRLRfuL_PQ). All additions to the code were made #
-# by me.						                                            #
+# edit in the text box and then save it in a new one. I learned the tkinter #
+# basics via W3 schools and took a lot of the functions from stack overflow #
 #############################################################################
 
 import tkinter as tk
