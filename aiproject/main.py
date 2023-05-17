@@ -27,7 +27,7 @@ logo_label = tk.Label(image=logo)
 logo_label.image = logo
 logo_label.grid(column=2, row=0)
 
-openai.api_key = "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" #allows us to access chatGPT
+openai.api_key = "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" #allows us to access chatGPT
 
 
 random_text = tk.StringVar() 
@@ -119,8 +119,13 @@ def generate_password():
     )
     
     # Return the generated response
-    password = tk.Label(main, text=response.choices[0].text, font="Papyrus")
-    password.grid(columnspan = 3, column=0, row=2) #prints out the generated response from chatGPT
+    #text box
+    text_box = tk.Text(main, height=5, width=50, padx=15, pady=15) #text box style
+    text_box.insert(1.0, response.choices[0].text)
+    text_box.tag_configure("center", justify="center")
+    text_box.tag_add("center", 1.0, "end")
+    text_box.grid(column=2, row=2)
+
 
 def strengthen_password(phrase):
     # Define the prompt that the API will use to generate the response
@@ -142,9 +147,11 @@ def strengthen_password(phrase):
         temperature=temperature,
         max_tokens=max_tokens
     )
-    
-    password = tk.Label(main, text=response.choices[0].text, font="Papyrus")
-    password.grid(columnspan = 3, column=0, row=6) #prints out the generated response from chatGPT
+    text_box = tk.Text(main, height=5, width=50, padx=15, pady=15) #text box style
+    text_box.insert(1.0, response.choices[0].text)
+    text_box.tag_configure("center", justify="center")
+    text_box.tag_add("center", 1.0, "end")
+    text_box.grid(column=2, row=6)
 
 def custom_password(characters, uppercase, lowercase, numbers, specials):
     # Define the prompt that the API will use to generate the response
@@ -182,9 +189,10 @@ def custom_password(characters, uppercase, lowercase, numbers, specials):
     #password = response.choices[0].text
     
     # Return the generated response
-    password = tk.Label(main, text=response.choices[0].text, font="Papyrus")
-    password.grid(columnspan = 3, column=0, row=11) #prints out the generated response from chatGPT
-    
-
+    text_box = tk.Text(main, height=5, width=50, padx=15, pady=15) #text box style
+    text_box.insert(1.0, response.choices[0].text)
+    text_box.tag_configure("center", justify="center")
+    text_box.tag_add("center", 1.0, "end")
+    text_box.grid(column=2, row=11)
 
 main.mainloop()
