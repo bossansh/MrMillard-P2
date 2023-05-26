@@ -27,7 +27,7 @@ logo_label = tk.Label(image=logo)
 logo_label.image = logo
 logo_label.grid(column=2, row=0)
 
-openai.api_key = "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" #allows us to access chatGPT
+openai.api_key = "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" #allows us to access chatGPT
 
 
 random_text = tk.StringVar() 
